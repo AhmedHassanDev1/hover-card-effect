@@ -1,0 +1,102 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: black;
+}
+.box{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.box_center{
+  width: 250px;
+  height:320px;
+  position: relative;
+}
+.box_cards{
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+}
+.box_cards .cards{
+  width: 100%;
+  height: 100%;
+    position: absolute;
+    transition:transform 0.3s ;
+transform: scale(0);
+ 
+}
+  .cards.active{
+    transition:transform 0.3s 0.3s;
+   transform: scale(1); 
+  }
+.box_cards  .cards  .big_card{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  border-radius: 10px;
+ background-size: cover;
+ background-position: center;
+  transform-origin: bottom;
+  transition: 0.3s ease-in-out;
+} 
+.box_cards .cards .big_card:nth-of-type(2){
+  transform: rotate(5deg);
+  z-index: 4;
+
+}
+.box_cards .big_card:nth-of-type(4){
+  transform: rotate(2deg);
+  z-index: 3;
+
+}
+.box_cards .big_card:nth-of-type(6){
+  transform: rotate(-2deg);
+  z-index: 2;
+ 
+}
+.box_cards .big_card:nth-of-type(8){
+  transform: rotate(-5deg);
+  z-index: 1;
+
+}
+.box_cards:hover .cards .big_card:nth-of-type(2){
+  transform: rotate(30deg);
+  z-index: 4;
+ transform-origin: 70% 150%;
+}
+.box_cards:hover .big_card:nth-of-type(4){
+  transform: rotate(15deg);
+  z-index: 3;
+  transform-origin: 70% 120%;
+}
+.box_cards:hover .big_card:nth-of-type(6){
+  transform: rotate(-10deg);
+  z-index: 2;
+  transform-origin: 30% 250%;
+}
+.box_cards:hover .big_card:nth-of-type(8){
+  transform: rotate(-30deg);
+  z-index: 1;
+  transform-origin: 30% 200%;
+}
+.box_btn{
+width: 100%;
+height: 50px; 
+margin-top: 20px; 
+display: flex;
+justify-content: space-around;
+}
+.box_btn .btn{
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: 2px solid blue;
+  cursor: pointer;
+}
